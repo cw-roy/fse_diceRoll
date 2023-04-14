@@ -1,0 +1,42 @@
+.list-unstyled {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.hero {
+    height: calc(100vh - 3.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.list-unstyled {
+    list-style: none;
+}
+
+.form-container {
+    background-color: lightgray;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.9);
+    text-align: left;
+}
+
+.form-group {
+    text-align: left;
+}
