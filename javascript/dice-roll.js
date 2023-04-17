@@ -12,7 +12,7 @@ function rollDice() {
 
   const numSides = parseInt(document.querySelector("#numSides").value);
   if (isNaN(numSides) || numSides <= 0) {
-    alert("Please enter a valid number of sides");
+    alert("Default sides is 6.  Enter alternate number if you want something different.");
     document.querySelector("#numSides").value = "6";
     document.querySelector("#numSides").focus();
     return;
