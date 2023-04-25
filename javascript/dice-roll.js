@@ -1,26 +1,29 @@
 let total = 0;
 let allRolls = [];
 
+const howManyDiceInput = document.querySelector("#howManyDice");
+const numSidesInput = document.querySelector("#numSides");
+const totalOutput = document.querySelector("#total");
+const allRollsOutput = document.querySelector("#allRolls");
+
 function rollDice() {
-  const numDice = parseInt(document.querySelector("#howManyDice").value);
+  const numDice = parseInt(howManyDiceInput.value);
   if (isNaN(numDice) || numDice <= 0) {
     alert("Please enter a valid number of dice");
-    document.querySelector("#howManyDice").value = "";
-    document.querySelector("#howManyDice").focus();
-    return;
+    howManyDiceInput.value = "";
+    howManyDiceInput.focus();
   }
 
-  const numSides = parseInt(document.querySelector("#numSides").value);
+  const numSides = parseInt(numSidesInput.value);
   if (isNaN(numSides) || numSides <= 0) {
     alert("Default sides is 6.  Enter alternate number if you want something different.");
-    document.querySelector("#numSides").value = "6";
-    document.querySelector("#numSides").focus();
-    return;
+    numSidesInput.value = "6";
+    numSidesInput.focus();
   }
 
   total = 0;
   allRolls = [];
-  document.querySelector("#allRolls").innerHTML = "";
+  allRollsOutput.innerHTML = "";
 
   for (let diceIndex = 0; diceIndex < numDice; diceIndex++) {
     const roll = Math.floor(Math.random() * numSides) + 1;
@@ -28,11 +31,11 @@ function rollDice() {
     allRolls.push(roll);
   }
 
-  document.querySelector("#total").innerHTML = "Total: " + total;
+  totalOutput.innerHTML = "Total: " + total;
 }
 
 function showAllRolls() {
-  const list = document.querySelector("#allRolls");
+  const list = allRollsOutput;
   list.innerHTML = "";
 
   for (let rolledDie = 0; rolledDie < allRolls.length; rolledDie++) {
@@ -43,10 +46,10 @@ function showAllRolls() {
 }
 
 function resetRolls() {
-  document.querySelector("#howManyDice").value = "";
-  document.querySelector("#numSides").value = "6";
-  document.querySelector("#total").innerHTML = "Total:";
-  document.querySelector("#allRolls").innerHTML = "";
+  howManyDiceInput.value = "";
+  numSidesInput.value = "6";
+  totalOutput.innerHTML = "Total:";
+  allRollsOutput.innerHTML = "";
   total = 0;
   allRolls = [];
 }
